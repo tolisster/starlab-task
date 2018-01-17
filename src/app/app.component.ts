@@ -1,10 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material';
+
+import { CategoryLocation } from './category-location';
+import { CategoryLocationService } from './category-location.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit, AfterViewInit {
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  categories: CategoryLocation[];
+  sumSelected = 2;
+  sums = [
+    { id: 1, name: '150 - 200 Lei' },
+    { id: 2, name: '200 - 250 Lei' },
+    { id: 3, name: '250 - 300 Lei' }
+  ];
+
+  weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  workingHours = [
+    {fromTime: '10:00', toTime: '23:00', state: 'open'},
+    {fromTime: '10:00', toTime: '23:00', state: 'open'},
+    {fromTime: '10:00', toTime: '23:00', state: 'open'},
+    {fromTime: '10:00', toTime: '23:00', state: 'open'},
+    {fromTime: '10:00', toTime: '23:00', state: 'open'},
+    {fromTime: '10:00', toTime: '23:00', state: 'open'},
+    {fromTime: '10:00', toTime: '23:00', state: 'open'}
+  ];
+
+  phoneMask = ['+', '3', '7', '3', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/];
+
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+
+  @ViewChild('stepper') stepper: MatStepper;
+
+  constructor(private _formBuilder: FormBuilder, private categoryLocationService: CategoryLocationService) { }
+
+  ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+        //firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      kitchenTags: ['']
+    });
+    this.getCategories();
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.stepper.selectedIndex = 0;
+    }, 0);
+  }
+
+  getCategories() {
+    this.categoryLocationService.getCategories().subscribe(categories => this.categories = categories);
+  }
 }

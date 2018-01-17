@@ -1,20 +1,281 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar class="page-header">Header</mat-toolbar>
 
+<mat-horizontal-stepper linear class="container" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <h3>Location info</h3>
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field>
+            <mat-label>Denumirea juridca</mat-label>
+            <input matInput readonly>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field>
+            <mat-label>Denumirea comerciala</mat-label>
+            <input matInput><!-- formControlName="firstCtrl"-->
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Reducerea StarNet</mat-label>
+            <input matInput type="number">
+            <span matSuffix>%</span>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-checkbox>Activarea bronarii</mat-checkbox>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Categorie</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let category of categories" [value]="category.id">
+                {{ category.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Selectati summa media a comenzii unice</mat-label>
+            <mat-select [(value)]="sumSelected">
+              <mat-option *ngFor="let sum of sums" [value]="sum.id">
+                {{ sum.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Description RO</mat-label>
+            <textarea matInput rows="5"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Description RU</mat-label>
+            <textarea matInput rows="5"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col offset-6">
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <h3>Working Hours</h3>
+      <div class="row">
+        <div class="col-2 offset-2">
+          De la:
+        </div>
+        <div class="col-2">
+          Pana la:
+        </div>
+      </div>
+      <div *ngFor="let workingHour of workingHours; let i = index" class="row">
+        <div class="col-2">
+          {{ weekDays[i] }}
+        </div>
+        <div class="col-4 row">
+          <div class="col-5">
+            <mat-form-field>
+              <input matInput type="time" [value]="workingHour.fromTime"><!-- formControlName="secondCtrl"-->
+            </mat-form-field>
+          </div>
+          <div class="col-2 align-self-center">
+            &mdash;
+          </div>
+          <div class="col-5">
+            <mat-form-field>
+              <input matInput type="time" [value]="workingHour.toTime">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col">
+          <mat-button-toggle-group #group="matButtonToggleGroup" [value]="workingHour.state">
+            <mat-button-toggle value="open">
+              Open
+            </mat-button-toggle>
+            <mat-button-toggle value="closed">
+              Closed
+            </mat-button-toggle>
+            <mat-button-toggle value="24">
+              24/24
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col offset-6">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperPrevious>Cancel</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <h3>Contact data</h3>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <mat-label>Contact First Name</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Contact Last Name</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input matInput type="tel" [textMask]="{ mask: phoneMask, showMask: true }">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Country</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Street</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Post Code</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col offset-6">
+          <button mat-button matStepperPrevious>Cancel</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <h3>Photos</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <image-upload></image-upload>
+      <div class="row">
+        <div class="col offset-6">
+          <button mat-button matStepperPrevious>Cancel</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <h3>Filters</h3>
+      <h4>Specificați caracteristicile localului</h4>
+      <div class="row">
+        <label>Bucatarie</label>
+        <tag-input formControlName="kitchenTags"
+                   [onlyFromAutocomplete]="true">
+          <tag-input-dropdown [showDropdownIfEmpty]="true"
+                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="row">
+        <label>Tip local</label>
+        <tag-input formControlName="kitchenTags"
+                   [onlyFromAutocomplete]="true">
+          <tag-input-dropdown [showDropdownIfEmpty]="true"
+                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="row">
+        <label>Tip mese</label>
+        <tag-input formControlName="kitchenTags"
+                   [onlyFromAutocomplete]="true">
+          <tag-input-dropdown [showDropdownIfEmpty]="true"
+                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="row">
+        <label>Menu special</label>
+        <tag-input formControlName="kitchenTags"
+                   [onlyFromAutocomplete]="true">
+          <tag-input-dropdown [showDropdownIfEmpty]="true"
+                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="row">
+        <div class="col offset-6">
+          <button mat-button matStepperPrevious>Cancel</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <h3>Additions and prices</h3>
+      <div class="row">
+        <label>Selectati toate elemente aditionale disponibile</label>
+        <tag-input formControlName="kitchenTags"
+                   [onlyFromAutocomplete]="true">
+          <tag-input-dropdown [showDropdownIfEmpty]="true"
+                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="row">
+        <label>Selectati elemente aditionale desponibile pentru bronare</label>
+        <tag-input formControlName="kitchenTags"
+                   [onlyFromAutocomplete]="true">
+          <tag-input-dropdown [showDropdownIfEmpty]="true"
+                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="row">
+        <div class="col offset-6">
+          <button mat-button matStepperPrevious>Cancel</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="secondFormGroup">
+      <h1>Felicitari!</h1>
+      <p>Acum localul Dvs este gata de a fi trimis la administratorii StarClub la verificare.
+        In scurt timp veti fi contactat de managerii proiectului.
+        Pentru a trimite localul la aprobare selectati butonul Trimite.</p>
+      <div class="row">
+        <button mat-button>Trimite</button>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<mat-toolbar class="page-footer">Footer</mat-toolbar>
