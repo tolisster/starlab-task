@@ -1,4 +1,29 @@
-<mat-toolbar class="page-header">Header</mat-toolbar>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#"><img src="assets/img/logo.png" width="84" height="70" alt="Star"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <span class="navbar-text ml-auto mr-5">
+      <img src="assets/img/user.png"> Gheorge Wasington
+    </span>
+    <ul class="navbar-nav mr-0">
+      <li class="nav-item">
+        <a class="nav-link nav-logout" href="#">log out</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ru
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+          <a class="dropdown-item" href="#">Ro</a>
+          <a class="dropdown-item" href="#">En</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <mat-horizontal-stepper linear class="container" #stepper>
   <mat-step [stepControl]="firstFormGroup">
@@ -191,41 +216,21 @@
     <form [formGroup]="secondFormGroup">
       <h3>Filters</h3>
       <h4>Specificați caracteristicile localului</h4>
-      <div class="row">
-        <label>Bucatarie</label>
-        <tag-input formControlName="kitchenTags"
-                   [onlyFromAutocomplete]="true">
-          <tag-input-dropdown [showDropdownIfEmpty]="true"
-                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
-          </tag-input-dropdown>
-        </tag-input>
-      </div>
+      <!--<mat-form-field>
+        <mat-label>Bucatarie</mat-label>
+        <app-tags-input
+                [source]="[{ value: '1', text: 'Cinese' }, { value: '2', text: 'Switzerlandă' }, { value: '3', text: 'Molldovenească' }, { value: '4', text: 'Georgiană' }]"
+                [value]="['1', '2']"
+        ></app-tags-input>
+      </mat-form-field>-->
       <div class="row">
         <label>Tip local</label>
-        <tag-input formControlName="kitchenTags"
-                   [onlyFromAutocomplete]="true">
-          <tag-input-dropdown [showDropdownIfEmpty]="true"
-                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
-          </tag-input-dropdown>
-        </tag-input>
       </div>
       <div class="row">
         <label>Tip mese</label>
-        <tag-input formControlName="kitchenTags"
-                   [onlyFromAutocomplete]="true">
-          <tag-input-dropdown [showDropdownIfEmpty]="true"
-                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
-          </tag-input-dropdown>
-        </tag-input>
       </div>
       <div class="row">
         <label>Menu special</label>
-        <tag-input formControlName="kitchenTags"
-                   [onlyFromAutocomplete]="true">
-          <tag-input-dropdown [showDropdownIfEmpty]="true"
-                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
-          </tag-input-dropdown>
-        </tag-input>
       </div>
       <div class="row">
         <div class="col offset-6">
@@ -238,23 +243,15 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <h3>Additions and prices</h3>
-      <div class="row">
-        <label>Selectati toate elemente aditionale disponibile</label>
-        <tag-input formControlName="kitchenTags"
-                   [onlyFromAutocomplete]="true">
-          <tag-input-dropdown [showDropdownIfEmpty]="true"
-                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
-          </tag-input-dropdown>
-        </tag-input>
-      </div>
+      <!--<mat-form-field>
+        <mat-label>Selectati toate elemente aditionale disponibile</mat-label>
+        <app-tags-input
+                [source]="[{ value: '1', text: 'Cinese' }, { value: '2', text: 'Switzerlandă' }, { value: '3', text: 'Molldovenească' }, { value: '4', text: 'Georgiană' }]"
+                [value]="['1', '2']"
+        ></app-tags-input>
+      </mat-form-field>-->
       <div class="row">
         <label>Selectati elemente aditionale desponibile pentru bronare</label>
-        <tag-input formControlName="kitchenTags"
-                   [onlyFromAutocomplete]="true">
-          <tag-input-dropdown [showDropdownIfEmpty]="true"
-                              [autocompleteItems]="['Cinese', 'Switzerlandă', 'Molldovenească', 'Georgiană']">
-          </tag-input-dropdown>
-        </tag-input>
       </div>
       <div class="row">
         <div class="col offset-6">
@@ -278,4 +275,4 @@
   </mat-step>
 </mat-horizontal-stepper>
 
-<mat-toolbar class="page-footer">Footer</mat-toolbar>
+<mat-toolbar class="page-footer justify-content-center">© 2013-2017 “Star-Club” All rights reserved.</mat-toolbar>

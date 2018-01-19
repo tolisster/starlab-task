@@ -29,7 +29,8 @@
     "angular2-text-mask": "^8.0.4",
     "bootstrap": "^4.0.0-beta.3",
     "core-js": "^2.4.1",
-    "ngx-chips": "^1.6.3",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.9",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },

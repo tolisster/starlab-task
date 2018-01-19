@@ -8,22 +8,22 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TextMaskModule } from 'angular2-text-mask';
 import { AgmCoreModule } from '@agm/core';
 import { ImageUploadModule } from 'angular2-image-upload';
-import { TagInputModule } from 'ngx-chips';
 
 import { InMemoryDataService } from './in-memory-data.service';
 import { AppComponent } from './app.component';
 import { CategoryLocationService } from './category-location.service';
 import { AppMaterialModule } from './material.module';
+import { TagsInputComponent } from './tags-input/tags-input.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TagsInputComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    TagInputModule,
     NoopAnimationsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

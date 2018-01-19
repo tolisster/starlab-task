@@ -1,24 +1,38 @@
 @import '~sass/variables';
+@import '~bootstrap/scss/mixins';
 
 .container {
-    padding-top: 64px;
-    mat-form-field {
-        width: 100%;
-    }
-    agm-map {
-        height: 100%;
-    }
+  padding-top: 64px;
+  mat-form-field {
+    width: 100%;
+  }
+  agm-map {
+    height: 100%;
+  }
 }
 
-.page-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+.navbar {
+  @include gradient-directional(#687c8e, #1d2d34);
+  .navbar-nav .nav-link {
+    font-weight: bold;
+    padding-right: 4rem;
+    &.nav-logout {
+      background: url(../assets/img/logout.png) no-repeat center left;
+      padding-left: 2rem;
+    }
+    &.nav-user {
+      background: url(../assets/img/user.png) no-repeat center left;
+      padding-left: 2rem;
+    }
+  }
 }
 
 .page-footer {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
+  @include gradient-x(#7e93a8, #374853);
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+  height: 40px;
 }
