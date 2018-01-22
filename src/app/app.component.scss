@@ -1,16 +1,6 @@
 @import '~sass/variables';
 @import '~bootstrap/scss/mixins';
 
-.container {
-  padding-top: 64px;
-  mat-form-field {
-    width: 100%;
-  }
-  agm-map {
-    height: 100%;
-  }
-}
-
 .navbar {
   @include gradient-directional(#687c8e, #1d2d34);
   .navbar-nav .nav-link {
@@ -23,6 +13,87 @@
     &.nav-user {
       background: url(../assets/img/user.png) no-repeat center left;
       padding-left: 2rem;
+    }
+  }
+}
+
+mat-horizontal-stepper {
+  margin-top: 40px;
+  width: 698px;
+  background-color: transparent;
+  ::ng-deep {
+    .mat-horizontal-stepper-header-container, .mat-horizontal-content-container {
+      background-color: white;
+      border-radius: 3px;
+    }
+    .mat-horizontal-stepper-header-container {
+      padding-top: 18px;
+      margin-bottom: 26px;
+      padding-bottom: 24px;
+      .mat-step-icon, .mat-step-icon-not-touched {
+        border-radius: unset;
+        background-color: transparent;
+        font-size: 36px;
+        margin-right: 0;
+        font-weight: bold;
+        &::before {
+          position: absolute;
+          top: -3px;
+          z-index: 3;
+          display: block;
+          color: #5d7081;
+          content: "Step";
+          font-size: 12px;
+          font-weight: normal;
+        }
+        &::after {
+          position: absolute;
+          bottom: 0;
+          z-index: 3;
+          display: block;
+          content: "";
+          width: 16px;
+          height: 16px;
+          border: 1px solid #b6c2cd;
+          border-radius: 50%;
+          background: radial-gradient(circle, #b6c2cd 38%,transparent 39%) no-repeat;
+        }
+        .mat-icon {
+          display: none;
+        }
+      }
+      .mat-step-icon {
+        color: #586b7b;
+      }
+      .mat-step-icon-not-touched {
+        color: #b6c2cd;
+      }
+      .mat-step-label {
+        display: none;
+      }
+      .mat-stepper-horizontal-line {
+        align-self: flex-end;
+        height: 8px;
+        margin: 0 -20px;
+      }
+    }
+    .mat-horizontal-content-container {
+      padding-top: 32px;
+      h3 {
+        border-left: 3px solid #30c171;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #5d7081;
+        font-weight: bold;
+        line-height: 1;
+        padding-left: 10px;
+      }
+      mat-form-field {
+        width: 100%;
+      }
+      agm-map {
+        height: 100%;
+      }
     }
   }
 }

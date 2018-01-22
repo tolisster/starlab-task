@@ -11,9 +11,9 @@
   </mat-chip>
 
   <input [matChipInputFor]="chipList" [matAutocomplete]="auto" [matChipInputAddOnBlur]="addOnBlur"
-         matInput [formControl]="autoCompleteChipList" #chipInput/>
+         matInput #chipInput/><!-- [formControl]="autoCompleteChipList"-->
 </mat-chip-list>
-<mat-autocomplete #auto="matAutocomplete" (optionSelected)="addChip($event, chipInput)">
+<mat-autocomplete #auto="matAutocomplete"> <!--(optionSelected)="addChip($event, chipInput)"-->
   <mat-option *ngFor="let option of filteredSources" [value]="option">
     {{ option.text }}
   </mat-option>
