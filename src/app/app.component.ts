@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import {Component, ViewChild, AfterViewInit, OnInit, Inject, LOCALE_ID} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material';
 
@@ -39,9 +39,15 @@ export class AppComponent implements OnInit, AfterViewInit {
   lat: number = 51.678418;
   lng: number = 7.809007;
 
+  languages = ['en', 'ro', 'ru'];
+
   @ViewChild('stepper') stepper: MatStepper;
 
-  constructor(private _formBuilder: FormBuilder, private categoryLocationService: CategoryLocationService) { }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private categoryLocationService: CategoryLocationService,
+    @Inject(LOCALE_ID) public locale: string
+  ) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -55,11 +61,19 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.stepper.selectedIndex = 0;
+      this.changeStep(0);
     }, 0);
   }
 
   getCategories() {
     this.categoryLocationService.getCategories().subscribe(categories => this.categories = categories);
+  }
+
+  /**
+   * Changes the step to the index specified
+   * @param {number} index The index of the step
+   */
+  changeStep(index: number) {
+    this.stepper.selectedIndex = index;
   }
 }

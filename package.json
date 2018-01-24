@@ -1,11 +1,16 @@
 {
   "name": "starlab-task",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
+    "start-en": "ng serve --aot --locale=en",
+    "start-ro": "ng serve --aot --i18nFile=src/locale/messages.ro.xlf --i18nFormat=xlf --locale=ro",
+    "start-ru": "ng serve --aot --i18nFile=src/locale/messages.ru.xlf --i18nFormat=xlf --locale=ru",
+    "xi18n": "ng xi18n",
+    "build-en": "ng build --prod --aot -bh=/starlab-task-preview/ --locale=en",
+    "build-ro": "ng build --prod --aot -bh=/starlab-task-preview/ro/ -op=ro/ --i18nFile=src/locale/messages.ro.xlf --i18nFormat=xlf --locale=ro",
+    "build-ru": "ng build --prod --aot -bh=/starlab-task-preview/ru/ -op=ru/ --i18nFile=src/locale/messages.ru.xlf --i18nFormat=xlf --locale=ru",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -27,7 +32,7 @@
     "angular-in-memory-web-api": "^0.5.2",
     "angular2-image-upload": "^1.0.0-rc.0",
     "angular2-text-mask": "^8.0.4",
-    "bootstrap": "^4.0.0-beta.3",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.9",
