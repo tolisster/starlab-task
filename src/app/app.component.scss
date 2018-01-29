@@ -1,7 +1,7 @@
 @import '~sass/variables';
 @import '~bootstrap/scss/mixins';
 
-@mixin step-point($color: #b6c2cd) {
+@mixin step-point($color: $starlab-stepper-color) {
   background-image: radial-gradient(circle, $color 38%,transparent 39%);
   background-repeat: no-repeat;
 }
@@ -30,10 +30,12 @@ mat-horizontal-stepper {
   ::ng-deep {
     .mat-horizontal-stepper-header-container, .mat-horizontal-content-container {
       background-color: white;
-      border-radius: 3px;
+      border-radius: 5px;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.14);
     }
     .mat-horizontal-stepper-header-container {
       margin-bottom: 26px;
+      padding: 0 10px;
       mat-step-header {
         height: 112px;
       }
@@ -45,7 +47,7 @@ mat-horizontal-stepper {
         div {
           font-size: 36px;
           font-weight: bold;
-          color: #b6c2cd;
+          color: $starlab-stepper-color;
           &::before {
             position: absolute;
             top: 16px;
@@ -64,16 +66,16 @@ mat-horizontal-stepper {
             content: "";
             width: 16px;
             height: 16px;
-            border: 1px solid #b6c2cd;
+            border: 1px solid $starlab-stepper-color;
             border-radius: 50%;
             margin-left: 2px;
             @include step-point();
           }
         }
         &.mat-step-label-active div {
-          color: #30c171;
+          color: $success;
           &::after {
-            @include step-point(#30c171);
+            @include step-point($success);
           }
         }
         &.mat-step-label-selected div {
@@ -89,16 +91,14 @@ mat-horizontal-stepper {
     .mat-horizontal-content-container {
       padding-top: 32px;
       h3 {
-        border-left: 3px solid #30c171;
+        border-left: 3px solid $success;
         text-transform: uppercase;
         font-size: 16px;
         color: #5d7081;
         font-weight: bold;
-        line-height: 1;
+        line-height: 0.9;
         padding-left: 10px;
-      }
-      mat-form-field {
-        width: 100%;
+        margin-bottom: 1.5rem;
       }
       agm-map {
         height: 100%;

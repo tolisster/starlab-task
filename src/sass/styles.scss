@@ -8,7 +8,10 @@
 '~bootstrap/scss/reboot',
 '~bootstrap/scss/type',
 '~bootstrap/scss/grid',
+'~bootstrap/scss/forms',
+'~bootstrap/scss/buttons',
 '~bootstrap/scss/dropdown',
+'~bootstrap/scss/input-group',
 '~bootstrap/scss/nav',
 '~bootstrap/scss/navbar',
 '~bootstrap/scss/utilities';
@@ -20,5 +23,16 @@ html {
     margin: 0;
     margin-bottom: 60px;
     @include gradient-directional(#d7d7d7, #fff);
+  }
+}
+label {
+  color: #5d7081;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+.form-control {
+  &:disabled, &[readonly] {
+    border-color: transparent;
+    border-radius: 0.4rem;
   }
 }
