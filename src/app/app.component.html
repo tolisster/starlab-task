@@ -31,7 +31,9 @@
 <mat-horizontal-stepper linear class="ml-auto mr-auto" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>1</ng-template>
+      <ng-template matStepLabel>
+        <div i18n-data-content data-content="Step">1</div>
+      </ng-template>
       <h3>Location info</h3>
       <div class="row">
         <div class="col-6">
@@ -104,6 +106,9 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        <div i18n-data-content data-content="Step">2</div>
+      </ng-template>
       <h3>Working Hours</h3>
       <div class="row">
         <div class="col-2 offset-2">
@@ -157,6 +162,9 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        <div i18n-data-content data-content="Step">3</div>
+      </ng-template>
       <h3>Contact data</h3>
       <div class="row">
         <div class="col">
@@ -205,6 +213,9 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        <div i18n-data-content data-content="Step">4</div>
+      </ng-template>
       <h3>Photos</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <image-upload></image-upload>
@@ -218,6 +229,9 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        <div i18n-data-content data-content="Step">5</div>
+      </ng-template>
       <h3>Filters</h3>
       <h4>Specificați caracteristicile localului</h4>
       <!--<mat-form-field>
@@ -246,6 +260,9 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        <div i18n-data-content data-content="Step">6</div>
+      </ng-template>
       <h3>Additions and prices</h3>
       <!--<mat-form-field>
         <mat-label>Selectati toate elemente aditionale disponibile</mat-label>
@@ -267,6 +284,9 @@
   </mat-step>
   <mat-step>
     <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        <div i18n-data-content data-content="Step">7</div>
+      </ng-template>
       <h1>Felicitari!</h1>
       <p>Acum localul Dvs este gata de a fi trimis la administratorii StarClub la verificare.
         In scurt timp veti fi contactat de managerii proiectului.

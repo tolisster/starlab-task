@@ -1,6 +1,11 @@
 @import '~sass/variables';
 @import '~bootstrap/scss/mixins';
 
+@mixin step-point($color: #b6c2cd) {
+  background-image: radial-gradient(circle, $color 38%,transparent 39%);
+  background-repeat: no-repeat;
+}
+
 .navbar {
   @include gradient-directional(#687c8e, #1d2d34);
   .navbar-nav .nav-item {
@@ -28,53 +33,56 @@ mat-horizontal-stepper {
       border-radius: 3px;
     }
     .mat-horizontal-stepper-header-container {
-      padding-top: 18px;
       margin-bottom: 26px;
-      padding-bottom: 24px;
+      mat-step-header {
+        height: 112px;
+      }
       .mat-step-icon, .mat-step-icon-not-touched {
-        border-radius: unset;
-        background-color: transparent;
-        font-size: 36px;
-        margin-right: 0;
-        font-weight: bold;
-        &::before {
-          position: absolute;
-          top: -3px;
-          z-index: 3;
-          display: block;
-          color: #5d7081;
-          content: "Step";
-          font-size: 12px;
-          font-weight: normal;
-        }
-        &::after {
-          position: absolute;
-          bottom: 0;
-          z-index: 3;
-          display: block;
-          content: "";
-          width: 16px;
-          height: 16px;
-          border: 1px solid #b6c2cd;
-          border-radius: 50%;
-          background: radial-gradient(circle, #b6c2cd 38%,transparent 39%) no-repeat;
-        }
-        .mat-icon {
-          display: none;
-        }
-      }
-      .mat-step-icon {
-        color: #586b7b;
-      }
-      .mat-step-icon-not-touched {
-        color: #b6c2cd;
+        display: none;
       }
       .mat-step-label {
-        display: none;
+        min-width: 0;
+        div {
+          font-size: 36px;
+          font-weight: bold;
+          color: #b6c2cd;
+          &::before {
+            position: absolute;
+            top: 16px;
+            z-index: 3;
+            display: block;
+            color: #5d7081;
+            content: attr(data-content);
+            font-size: 12px;
+            font-weight: normal;
+          }
+          &::after {
+            position: absolute;
+            bottom: 16px;
+            z-index: 3;
+            display: block;
+            content: "";
+            width: 16px;
+            height: 16px;
+            border: 1px solid #b6c2cd;
+            border-radius: 50%;
+            margin-left: 2px;
+            @include step-point();
+          }
+        }
+        &.mat-step-label-active div {
+          color: #30c171;
+          &::after {
+            @include step-point(#30c171);
+          }
+        }
+        &.mat-step-label-selected div {
+          color: #586b7b;
+        }
       }
       .mat-stepper-horizontal-line {
         align-self: flex-end;
-        height: 8px;
+        height: 24px;
         margin: 0 -20px;
       }
     }

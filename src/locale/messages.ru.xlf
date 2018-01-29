@@ -18,6 +18,14 @@
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="041620337eaebda87971d345d05697639dfe78e4" datatype="html">
+        <source>Step</source>
+        <target>Шаг</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">288</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
