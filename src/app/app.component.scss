@@ -6,23 +6,6 @@
   background-repeat: no-repeat;
 }
 
-.navbar {
-  @include gradient-directional(#687c8e, #1d2d34);
-  .navbar-nav .nav-item {
-    .nav-link {
-      font-weight: bold;
-      padding-right: 4rem;
-      &.nav-logout {
-        background: url(../assets/img/logout.png) no-repeat center left;
-        padding-left: 2rem;
-      }
-    }
-    &.dropdown-language a {
-      text-transform: capitalize;
-    }
-  }
-}
-
 mat-horizontal-stepper {
   margin-top: 40px;
   width: 698px;

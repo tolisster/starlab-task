@@ -14,11 +14,13 @@ import { AppComponent } from './app.component';
 import { CategoryLocationService } from './category-location.service';
 import { AppMaterialModule } from './material.module';
 import { TagsInputComponent } from './tags-input/tags-input.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TagsInputComponent
+    TagsInputComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
