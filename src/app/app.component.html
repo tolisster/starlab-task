@@ -1,8 +1,8 @@
 <nav app-navbar></nav>
 
-<mat-horizontal-stepper linear class="ml-auto mr-auto" #stepper>
-  <mat-step [stepControl]="locationInfoFormGroup">
-    <form [formGroup]="locationInfoFormGroup">
+<form [formGroup]="formGroup">
+  <mat-horizontal-stepper class="ml-auto mr-auto" linear formArrayName="formArray" #stepper>
+    <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
       <ng-template matStepLabel>
         <div i18n-data-content data-content="Step">1</div>
       </ng-template>
@@ -10,7 +10,7 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="legalNameInputText" i18n>Legal Name</label>
-          <input type="text" class="form-control" id="legalNameInputText" formControlName="legalName" readonly>
+          <input type="text" [value]="legalName" class="form-control" id="legalNameInputText" readonly>
         </div>
       </div>
       <div class="form-row">
@@ -86,16 +86,15 @@
       </div>
       <div class="form-row">
         <div class="col-md-3 offset-6">
-          <button class="btn btn-info btn-block" [disabled]="locationInfoFormGroup.pristine" i18n>Cancel</button>
+          <button type="reset" class="btn btn-info btn-block" (click)="revert()" [disabled]="locationInfoFormGroup.pristine" i18n>Cancel</button>
         </div>
         <div class="col-md-3">
-          <button class="btn btn-success btn-block" [disabled]="locationInfoFormGroup.invalid" matStepperNext i18n>Next</button>
+          <button type="button" class="btn btn-success btn-block" [disabled]="locationInfoFormGroup.invalid" matStepperNext i18n>Next</button>
         </div>
       </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    </mat-step>
+
+    <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">
       <ng-template matStepLabel>
         <div i18n-data-content data-content="Step">2</div>
       </ng-template>
@@ -141,17 +140,20 @@
           </mat-button-toggle-group>
         </div>
       </div>
-      <div class="row">
-        <div class="col offset-6">
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperPrevious>Cancel</button>
-          <button mat-button matStepperNext>Next</button>
+      <div class="form-row">
+        <div class="col-md-3 offset-6">
+          <button type="button" class="btn btn-success btn-block" [disabled]="locationInfoFormGroup.invalid" matStepperPrevious i18n>Back</button>
+        </div>
+        <div class="col-md-3">
+          <button type="reset" class="btn btn-info btn-block" (click)="revert()" [disabled]="locationInfoFormGroup.pristine" i18n>Cancel</button>
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-success btn-block" [disabled]="locationInfoFormGroup.invalid" matStepperNext i18n>Next</button>
         </div>
       </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    </mat-step>
+
+    <mat-step formGroupName="2" [stepControl]="formArray?.get([2])">
       <ng-template matStepLabel>
         <div i18n-data-content data-content="Step">3</div>
       </ng-template>
@@ -193,16 +195,15 @@
           </agm-map>
         </div>
       </div>
-      <div class="row">
-        <div class="col offset-6">
+      <div class="form-row">
+        <div class="col-md-3 offset-6">
           <button mat-button matStepperPrevious>Cancel</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    </mat-step>
+
+    <mat-step formGroupName="3" [stepControl]="formArray?.get([3])">
       <ng-template matStepLabel>
         <div i18n-data-content data-content="Step">4</div>
       </ng-template>
@@ -215,10 +216,9 @@
           <button mat-button matStepperNext>Next</button>
         </div>
       </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    </mat-step>
+
+    <mat-step formGroupName="4" [stepControl]="formArray?.get([4])">
       <ng-template matStepLabel>
         <div i18n-data-content data-content="Step">5</div>
       </ng-template>
@@ -246,10 +246,9 @@
           <button mat-button matStepperNext>Next</button>
         </div>
       </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    </mat-step>
+
+    <mat-step formGroupName="5" [stepControl]="formArray?.get([5])">
       <ng-template matStepLabel>
         <div i18n-data-content data-content="Step">6</div>
       </ng-template>
@@ -270,10 +269,9 @@
           <button mat-button matStepperNext>Next</button>
         </div>
       </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <form [formGroup]="secondFormGroup">
+    </mat-step>
+
+    <mat-step>
       <ng-template matStepLabel>
         <div i18n-data-content data-content="Step">7</div>
       </ng-template>
@@ -285,8 +283,8 @@
         <button mat-button>Trimite</button>
         <button mat-button matStepperPrevious>Back</button>
       </div>
-    </form>
-  </mat-step>
-</mat-horizontal-stepper>
+    </mat-step>
+  </mat-horizontal-stepper>
+</form>
 
 <mat-toolbar class="page-footer justify-content-center">© 2013-2017 “Star-Club” All rights reserved.</mat-toolbar>

@@ -1,5 +1,5 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, ViewChild, AfterViewInit, OnInit, OnChanges } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material';
 
 import { CategoryLocation } from './category-location';
@@ -10,7 +10,8 @@ import { CategoryLocationService } from './category-location.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit, AfterViewInit, OnChanges {
+  formGroup: FormGroup;
   locationInfoFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   textareaMaxLength = 250;
   discountMin = 7;
   discountMax = 100;
+
+  legalName = 'STAR HOLDING';
 
   get tradeName() { return this.locationInfoFormGroup.get('tradeName'); }
   get discount() { return this.locationInfoFormGroup.get('discount'); }
@@ -52,6 +55,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild('stepper') stepper: MatStepper;
 
+  /** Returns a FormArray with the name 'formArray'. */
+  get formArray(): AbstractControl | null { return this.formGroup.get('formArray'); }
+
   constructor(
     private formBuilder: FormBuilder,
     private categoryLocationService: CategoryLocationService
@@ -59,7 +65,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.locationInfoFormGroup = this.formBuilder.group({
-      legalName: [''],
       tradeName: ['', [Validators.required, Validators.maxLength(this.inputMaxLength)]],
       discount: ['', [Validators.required, Validators.min(this.discountMin), Validators.max(this.discountMax)]],
       reservation: [''],
@@ -67,6 +72,27 @@ export class AppComponent implements OnInit, AfterViewInit {
       orderSum: ['', Validators.required],
       roDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]],
       ruDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]]
+    });
+
+    this.formGroup = this.formBuilder.group({
+      formArray: this.formBuilder.array([
+        this.locationInfoFormGroup,
+        this.formBuilder.group({
+          //emailFormCtrl: ['', Validators.email]
+        }),
+        this.formBuilder.group({
+          //emailFormCtrl: ['', Validators.email]
+        }),
+        this.formBuilder.group({
+          //emailFormCtrl: ['', Validators.email]
+        }),
+        this.formBuilder.group({
+          //emailFormCtrl: ['', Validators.email]
+        }),
+        this.formBuilder.group({
+          //emailFormCtrl: ['', Validators.email]
+        }),
+      ])
     });
     this.secondFormGroup = this.formBuilder.group({
       kitchenTags: ['']
@@ -80,6 +106,18 @@ export class AppComponent implements OnInit, AfterViewInit {
     }, 0);
   }
 
+  ngOnChanges() {
+    this.locationInfoFormGroup.reset({
+      tradeName: '',
+      discount: '',
+      reservation: '',
+      category: '',
+      orderSum: 2,
+      roDescription: '',
+      ruDescription: ''
+    });
+  }
+
   getCategories() {
     this.categoryLocationService.getCategories().subscribe(categories => this.categories = categories);
   }
@@ -90,5 +128,9 @@ export class AppComponent implements OnInit, AfterViewInit {
    */
   changeStep(index: number) {
     this.stepper.selectedIndex = index;
+  }
+
+  revert() {
+    this.ngOnChanges();
   }
 }
