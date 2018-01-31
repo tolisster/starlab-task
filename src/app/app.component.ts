@@ -11,11 +11,22 @@ import { CategoryLocationService } from './category-location.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  firstFormGroup: FormGroup;
+  locationInfoFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
+  inputMaxLength = 50;
+  textareaMaxLength = 250;
+  discountMin = 7;
+  discountMax = 100;
+
+  get tradeName() { return this.locationInfoFormGroup.get('tradeName'); }
+  get discount() { return this.locationInfoFormGroup.get('discount'); }
+  get category() { return this.locationInfoFormGroup.get('category'); }
+  get orderSum() { return this.locationInfoFormGroup.get('orderSum'); }
+  get roDescription() { return this.locationInfoFormGroup.get('roDescription'); }
+  get ruDescription() { return this.locationInfoFormGroup.get('ruDescription'); }
+
   categories: CategoryLocation[];
-  sumSelected = 2;
   sums = [
     { id: 1, name: '150 - 200 Lei' },
     { id: 2, name: '200 - 250 Lei' },
@@ -42,15 +53,22 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('stepper') stepper: MatStepper;
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     private categoryLocationService: CategoryLocationService
   ) { }
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-        //firstCtrl: ['', Validators.required]
+    this.locationInfoFormGroup = this.formBuilder.group({
+      legalName: [''],
+      tradeName: ['', [Validators.required, Validators.maxLength(this.inputMaxLength)]],
+      discount: ['', [Validators.required, Validators.min(this.discountMin), Validators.max(this.discountMax)]],
+      reservation: [''],
+      category: ['', Validators.required],
+      orderSum: ['', Validators.required],
+      roDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]],
+      ruDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]]
     });
-    this.secondFormGroup = this._formBuilder.group({
+    this.secondFormGroup = this.formBuilder.group({
       kitchenTags: ['']
     });
     this.getCategories();

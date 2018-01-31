@@ -27,12 +27,14 @@ html {
 }
 label {
   color: #5d7081;
-  font-size: 0.9rem;
   margin-bottom: 0.2rem;
 }
 .form-control {
   &:disabled, &[readonly] {
     border-color: transparent;
     border-radius: 0.4rem;
+  }
+  &.ng-touched.ng-invalid {
+    @extend .is-invalid;
   }
 }

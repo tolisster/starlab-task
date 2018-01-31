@@ -2,52 +2,36 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="319e0745bcbc132451569294fa2fa21bf10f555a" datatype="html">
-        <source>Toggle navigation</source>
-        <target>Переключить навигацию</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="83fca7050c6f728feaabf1cdd5335f01f7e03a87" datatype="html">
-        <source>log out</source>
-        <target>выход</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="041620337eaebda87971d345d05697639dfe78e4" datatype="html">
         <source>Step</source>
         <target>Шаг</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">105</context>
+          <context context-type="linenumber">100</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">161</context>
+          <context context-type="linenumber">156</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">212</context>
+          <context context-type="linenumber">207</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">228</context>
+          <context context-type="linenumber">223</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">259</context>
+          <context context-type="linenumber">254</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">283</context>
+          <context context-type="linenumber">278</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5e227fb952ac538978783fbd8374fcc771a1d9f7" datatype="html">
@@ -55,7 +39,7 @@
         <target>Информация о местоположении</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="83ab99aaffa137689a47edece3f6358c17f2f05a" datatype="html">
@@ -63,7 +47,7 @@
         <target>Юридическое название</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2bbc60ccf273ac77452a9d950bee97d9c7f8f7e8" datatype="html">
@@ -71,7 +55,31 @@
         <target>Коммерческое название</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="541087322c34e8b26954fd67ff4fc80d1a6c1b33" datatype="html">
+        <source>Name is required.</source>
+        <target>Необходимо указать название.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a7ecbf2562dbf6da45e03e9dc613b66bfc85a437" datatype="html">
+        <source>Name must be no more than <x id="ICU" equiv-text="{inputMaxLength, plural, =1 {...} other {...}}"/>.</source>
+        <target>Название должно быть не более <x id="ICU" equiv-text="{inputMaxLength, plural, one {...} other {...}}"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b33f7efe3cff6c9a11dcdb7946dca7946b1ecbf4" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {1 character} other {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> characters} }</source>
+        <target>{VAR_PLURAL, plural, one {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> символа} other {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> символов} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="619f15c9ffd30e1720b4823369553ff75eba23ec" datatype="html">
@@ -79,7 +87,31 @@
         <target>Скидка StarNet</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a311db30eb17825ba7ffc2a1397927439c4d2339" datatype="html">
+        <source>Discount is required.</source>
+        <target>Требуется указать скидку.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f44c1439acf97310a2f5108862a5f6eaf1417939" datatype="html">
+        <source>Discount must be at least <x id="INTERPOLATION" equiv-text="{{discountMin}}"/>%.</source>
+        <target>Скидка должна составлять не менее <x id="INTERPOLATION" equiv-text="{{discountMin}}"/>%.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="306759a481896715c4b59f6e4dacdab9fe5fcbf5" datatype="html">
+        <source>Discount should not exceed <x id="INTERPOLATION" equiv-text="{{discountMax}}"/>%.</source>
+        <target>Скидка не должна превышать <x id="INTERPOLATION" equiv-text="{{discountMax}}"/>%.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ae25bf0ed885df38b39073762df7e66e8ff9bac4" datatype="html">
@@ -87,7 +119,7 @@
         <target>Включение бронирования</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="607de17c2a755f65775881c19e276e7c933bcf94" datatype="html">
@@ -95,15 +127,31 @@
         <target>Категория</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b14e06ecce376a4513b11c50864977ee5baba61" datatype="html">
+        <source>Category is required.</source>
+        <target>Требуется указать категорию.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="eb3e5c5468327fe25c0d7800db94994dddeb5665" datatype="html">
         <source>Select the average sum of the single order</source>
-        <target>Выберите среднее количество одного заказа</target>
+        <target>Выберите среднюю сумму одного заказа</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0356333031889ef7efe8997c25648a2713c892e0" datatype="html">
+        <source>Sum is required.</source>
+        <target>Требуется указать сумму.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7a811d9a2bdf28f5d7028015b354004eac213e99" datatype="html">
@@ -111,7 +159,43 @@
         <target>Описание RO</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8b49c52315ea545a3b62d127fbe3515910bfa5cd" datatype="html">
+        <source>Description is required.</source>
+        <target>Необходимо указать описание.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="327908cefb5adbaa4b09989367799287ee6e79df" datatype="html">
+        <source>Description must be no more than <x id="ICU" equiv-text="{textareaMaxLength, plural, =1 {...} other {...}}"/>.</source>
+        <target>Описание должно быть не более <x id="ICU" equiv-text="{textareaMaxLength, plural, one {...} other {...}}"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdec92cfa9f758f450c97e45c58f96ba1bbf82d8" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {1 character} other {<x id="INTERPOLATION" equiv-text="{{textareaMaxLength}}"/> characters} }</source>
+        <target>{VAR_PLURAL, plural, one {<x id="INTERPOLATION" equiv-text="{{textareaMaxLength}}"/> символа} other {<x id="INTERPOLATION" equiv-text="{{textareaMaxLength}}"/> символов} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1b775926de529021e2ae797007cec9991abef8b9" datatype="html">
@@ -119,7 +203,7 @@
         <target>Описание RU</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
@@ -127,7 +211,7 @@
         <target>Сброс</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
@@ -135,7 +219,23 @@
         <target>Следующий</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="319e0745bcbc132451569294fa2fa21bf10f555a" datatype="html">
+        <source>Toggle navigation</source>
+        <target>Переключить навигацию</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="83fca7050c6f728feaabf1cdd5335f01f7e03a87" datatype="html">
+        <source>log out</source>
+        <target>выход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
     </body>

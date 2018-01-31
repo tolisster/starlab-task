@@ -83,6 +83,9 @@ mat-horizontal-stepper {
         padding-left: 10px;
         margin-bottom: 1.5rem;
       }
+      .mat-select-value-text {
+        color: $input-color;
+      }
       agm-map {
         height: 100%;
       }
