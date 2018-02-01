@@ -3,6 +3,9 @@ import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { MatStepper } from '@angular/material';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 
+import { localStoragePrefix } from './config';
+import { StepDataService } from './step-data.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +13,6 @@ import { StepperSelectionEvent } from '@angular/cdk/stepper';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   formGroup: FormGroup;
-  locationInfoFormGroup: FormGroup;
 
   weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -34,12 +36,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   /** Returns a FormArray with the name 'formArray'. */
   get formArray(): AbstractControl | null { return this.formGroup.get('formArray'); }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private stepDataService: StepDataService) { }
 
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
       formArray: this.formBuilder.array([
-        this.locationInfoFormGroup,
+        this.stepDataService.locationInfoFormGroup,
         this.formBuilder.group({
           //emailFormCtrl: ['', Validators.email]
         }),
@@ -62,6 +64,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.changeStep(0);
+      this.loadDataStep(0);
     }, 0);
   }
 
@@ -74,6 +77,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   stepperChanged(evt: StepperSelectionEvent) {
-    console.log('test', this.formArray.get([evt.previouslySelectedIndex]));
+    this.loadDataStep(evt.selectedIndex);
+  }
+
+  loadDataStep(index: number) {
+    const data = localStorage.getItem(`${localStoragePrefix}-step-${index}`);
+    if (data) {
+      this.formArray.get([index]).setValue(JSON.parse(data));
+    }
   }
 }

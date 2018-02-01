@@ -17,6 +17,7 @@ import { LocationInfoComponent } from './location-info/location-info.component';
 import { AppMaterialModule } from './material.module';
 import { TagsInputComponent } from './tags-input/tags-input.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { StepDataService } from './step-data.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     TextMaskModule
   ],
   providers: [
-      CategoryLocationService
+      CategoryLocationService,
+      StepDataService
   ],
   bootstrap: [AppComponent]
 })

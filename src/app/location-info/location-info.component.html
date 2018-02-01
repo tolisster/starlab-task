@@ -1,4 +1,4 @@
-<ng-container [formGroup]="formGroup">
+<ng-container [formGroup]="stepDataService.locationInfoFormGroup">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="legalNameInputText" i18n>Legal Name</label>
@@ -78,10 +78,10 @@
   </div>
   <div class="form-row">
     <div class="col-md-3 offset-6">
-      <button type="reset" class="btn btn-info btn-block" (click)="revert()" [disabled]="formGroup.pristine" i18n>Cancel</button>
+      <button type="reset" class="btn btn-info btn-block" (click)="revert()" [disabled]="stepDataService.locationInfoFormGroup.pristine" i18n>Cancel</button>
     </div>
     <div class="col-md-3">
-      <button type="button" class="btn btn-success btn-block" [disabled]="formGroup.invalid" matStepperNext i18n>Next</button>
+      <button type="button" class="btn btn-success btn-block" (click)="save()" [disabled]="stepDataService.locationInfoFormGroup.invalid" matStepperNext i18n>Next</button>
     </div>
   </div>
 </ng-container>

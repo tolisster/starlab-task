@@ -1,9 +1,10 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
-import { inputMaxLength, textareaMaxLength } from '../config';
+import { discountMax, discountMin, inputMaxLength, localStoragePrefix, textareaMaxLength } from '../config';
 import { CategoryLocation } from '../category-location';
 import { CategoryLocationService } from '../category-location.service';
+import { StepDataService } from '../step-data.service';
 
 @Component({
   selector: 'app-location-info',
@@ -11,12 +12,10 @@ import { CategoryLocationService } from '../category-location.service';
   styleUrls: ['./location-info.component.scss']
 })
 export class LocationInfoComponent implements OnInit, OnChanges {
-  @Input() formGroup: FormGroup;
-
   inputMaxLength = inputMaxLength;
   textareaMaxLength = textareaMaxLength;
-  discountMin = 7;
-  discountMax = 100;
+  discountMin = discountMin;
+  discountMax = discountMax;
 
   legalName = 'STAR HOLDING';
   categories: CategoryLocation[];
@@ -26,31 +25,25 @@ export class LocationInfoComponent implements OnInit, OnChanges {
     { id: 3, name: '250 - 300 Lei' }
   ];
 
-  get tradeName() { return this.formGroup.get('tradeName'); }
-  get discount() { return this.formGroup.get('discount'); }
-  get category() { return this.formGroup.get('category'); }
-  get orderSum() { return this.formGroup.get('orderSum'); }
-  get roDescription() { return this.formGroup.get('roDescription'); }
-  get ruDescription() { return this.formGroup.get('ruDescription'); }
+  get tradeName() { return this.stepDataService.locationInfoFormGroup.get('tradeName'); }
+  get discount() { return this.stepDataService.locationInfoFormGroup.get('discount'); }
+  get category() { return this.stepDataService.locationInfoFormGroup.get('category'); }
+  get orderSum() { return this.stepDataService.locationInfoFormGroup.get('orderSum'); }
+  get roDescription() { return this.stepDataService.locationInfoFormGroup.get('roDescription'); }
+  get ruDescription() { return this.stepDataService.locationInfoFormGroup.get('ruDescription'); }
 
-  constructor(private formBuilder: FormBuilder, private categoryLocationService: CategoryLocationService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private categoryLocationService: CategoryLocationService,
+    public stepDataService: StepDataService
+  ) { }
 
   ngOnInit() {
     this.getCategories();
-
-    this.formGroup = this.formBuilder.group({
-      tradeName: ['', [Validators.required, Validators.maxLength(this.inputMaxLength)]],
-      discount: ['', [Validators.required, Validators.min(this.discountMin), Validators.max(this.discountMax)]],
-      reservation: [''],
-      category: ['', Validators.required],
-      orderSum: ['', Validators.required],
-      roDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]],
-      ruDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]]
-    });
   }
 
   ngOnChanges() {
-    this.formGroup.reset({
+    this.stepDataService.locationInfoFormGroup.reset({
       tradeName: '',
       discount: '',
       reservation: '',
@@ -67,6 +60,10 @@ export class LocationInfoComponent implements OnInit, OnChanges {
 
   revert() {
     this.ngOnChanges();
+  }
+
+  save() {
+    localStorage.setItem(`${localStoragePrefix}-step-0`, JSON.stringify(this.stepDataService.locationInfoFormGroup.value));
   }
 
 }
