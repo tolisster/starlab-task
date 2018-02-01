@@ -6,21 +6,25 @@ import { discountMax, discountMin, inputMaxLength, textareaMaxLength } from './c
 @Injectable()
 export class StepDataService {
   locationInfoFormGroup: FormGroup;
-
-  inputMaxLength = inputMaxLength;
-  textareaMaxLength = textareaMaxLength;
-  discountMin = discountMin;
-  discountMax = discountMax;
+  workingHoursFormGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.locationInfoFormGroup = this.formBuilder.group({
-      tradeName: ['', [Validators.required, Validators.maxLength(this.inputMaxLength)]],
-      discount: ['', [Validators.required, Validators.min(this.discountMin), Validators.max(this.discountMax)]],
-      reservation: [''],
-      category: ['', Validators.required],
-      orderSum: ['', Validators.required],
-      roDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]],
-      ruDescription: ['', [Validators.required, Validators.maxLength(this.textareaMaxLength)]]
+      tradeName: ['', [Validators.required, Validators.maxLength(inputMaxLength)]],
+      discount: [null, [Validators.required, Validators.min(discountMin), Validators.max(discountMax)]],
+      reservation: false,
+      category: [null, Validators.required],
+      orderSum: [null, Validators.required],
+      roDescription: ['', [Validators.required, Validators.maxLength(textareaMaxLength)]],
+      ruDescription: ['', [Validators.required, Validators.maxLength(textareaMaxLength)]]
+    });
+
+    const workingHourFormGroups = [];
+    for (let i = 0; i < 7; i++) {
+      workingHourFormGroups.push(this.formBuilder.group({fromTime: '10:00', toTime: '23:00', state: 'open'}));
+    }
+    this.workingHoursFormGroup = this.formBuilder.group({
+      formArray: this.formBuilder.array(workingHourFormGroups)
     });
   }
 

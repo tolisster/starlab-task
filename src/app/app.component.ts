@@ -14,18 +14,6 @@ import { StepDataService } from './step-data.service';
 export class AppComponent implements OnInit, AfterViewInit {
   formGroup: FormGroup;
 
-  weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-  workingHours = [
-    {fromTime: '10:00', toTime: '23:00', state: 'open'},
-    {fromTime: '10:00', toTime: '23:00', state: 'open'},
-    {fromTime: '10:00', toTime: '23:00', state: 'open'},
-    {fromTime: '10:00', toTime: '23:00', state: 'open'},
-    {fromTime: '10:00', toTime: '23:00', state: 'open'},
-    {fromTime: '10:00', toTime: '23:00', state: 'open'},
-    {fromTime: '10:00', toTime: '23:00', state: 'open'}
-  ];
-
   phoneMask = ['+', '3', '7', '3', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/];
 
   lat: number = 51.678418;
@@ -42,9 +30,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.formGroup = this.formBuilder.group({
       formArray: this.formBuilder.array([
         this.stepDataService.locationInfoFormGroup,
-        this.formBuilder.group({
-          //emailFormCtrl: ['', Validators.email]
-        }),
+        this.stepDataService.workingHoursFormGroup,
         this.formBuilder.group({
           //emailFormCtrl: ['', Validators.email]
         }),

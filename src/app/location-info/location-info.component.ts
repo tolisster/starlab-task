@@ -1,5 +1,4 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
 import { discountMax, discountMin, inputMaxLength, localStoragePrefix, textareaMaxLength } from '../config';
 import { CategoryLocation } from '../category-location';
@@ -32,11 +31,7 @@ export class LocationInfoComponent implements OnInit, OnChanges {
   get roDescription() { return this.stepDataService.locationInfoFormGroup.get('roDescription'); }
   get ruDescription() { return this.stepDataService.locationInfoFormGroup.get('ruDescription'); }
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private categoryLocationService: CategoryLocationService,
-    public stepDataService: StepDataService
-  ) { }
+  constructor(public stepDataService: StepDataService, private categoryLocationService: CategoryLocationService) { }
 
   ngOnInit() {
     this.getCategories();
