@@ -1,0 +1,87 @@
+<ng-container [formGroup]="formGroup">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="legalNameInputText" i18n>Legal Name</label>
+      <input type="text" [value]="legalName" class="form-control" id="legalNameInputText" readonly>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="tradeNameInputText" i18n>Trade Name</label>
+      <input type="text" class="form-control" id="tradeNameInputText" formControlName="tradeName" required>
+      <div *ngIf="tradeName.invalid && (tradeName.dirty || tradeName.touched)" class="invalid-feedback">
+        <ng-container *ngIf="tradeName.errors.required" i18n>Name is required.</ng-container>
+        <ng-container *ngIf="tradeName.errors.maxlength" i18n>Name must be no more than {inputMaxLength, plural, =1 {1 character} other {{{inputMaxLength}} characters}}.</ng-container>
+      </div>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="discountInputNumber" i18n>Discount StarNet</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="discountInputNumber" formControlName="discount" aria-describedby="percent-addon" required>
+        <div class="input-group-append">
+          <span class="input-group-text" id="percent-addon">%</span>
+        </div>
+        <div *ngIf="discount.invalid && (discount.dirty || discount.touched)" class="invalid-feedback">
+          <ng-container *ngIf="discount.errors.required" i18n>Discount is required.</ng-container>
+          <ng-container *ngIf="discount.errors.min" i18n>Discount must be at least {{discountMin}}%.</ng-container>
+          <ng-container *ngIf="discount.errors.max" i18n>Discount should not exceed {{discountMax}}%.</ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-3">
+      <label></label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="reservationCheckbox" formControlName="reservation">
+        <label class="form-check-label" for="reservationCheckbox" i18n>Activating the reservation</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="categorySelect" i18n>Category</label>
+      <select class="form-control" id="categorySelect" formControlName="category">
+        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+      </select>
+      <div *ngIf="category.invalid && (category.dirty || category.touched)" class="invalid-feedback">
+        <ng-container *ngIf="category.errors.required" i18n>Category is required.</ng-container>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="orderSumSelect" i18n>Select the average sum of the single order</label>
+      <mat-select class="form-control" id="orderSumSelect" formControlName="orderSum">
+        <mat-option *ngFor="let sum of sums" [value]="sum.id">
+          {{ sum.name }}
+        </mat-option>
+      </mat-select>
+      <div *ngIf="orderSum.invalid && (orderSum.dirty || orderSum.touched)" class="invalid-feedback">
+        <ng-container *ngIf="orderSum.errors.required" i18n>Sum is required.</ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="roDescriptionTextarea" i18n>Description RO</label>
+      <textarea class="form-control" id="roDescriptionTextarea" rows="3" formControlName="roDescription" required></textarea>
+      <div *ngIf="roDescription.invalid && (roDescription.dirty || roDescription.touched)" class="invalid-feedback">
+        <ng-container *ngIf="roDescription.errors.required" i18n>Description is required.</ng-container>
+        <ng-container *ngIf="roDescription.errors.maxlength" i18n>Description must be no more than {textareaMaxLength, plural, =1 {1 character} other {{{textareaMaxLength}} characters}}.</ng-container>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="ruDescriptionTextarea" i18n>Description RU</label>
+      <textarea class="form-control" id="ruDescriptionTextarea" rows="3" formControlName="ruDescription" required></textarea>
+      <div *ngIf="ruDescription.invalid && (ruDescription.dirty || ruDescription.touched)" class="invalid-feedback">
+        <ng-container *ngIf="ruDescription.errors.required" i18n>Description is required.</ng-container>
+        <ng-container *ngIf="ruDescription.errors.maxlength" i18n>Description must be no more than {textareaMaxLength, plural, =1 {1 character} other {{{textareaMaxLength}} characters}}.</ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-3 offset-6">
+      <button type="reset" class="btn btn-info btn-block" (click)="revert()" [disabled]="formGroup.pristine" i18n>Cancel</button>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-success btn-block" [disabled]="formGroup.invalid" matStepperNext i18n>Next</button>
+    </div>
+  </div>
+</ng-container>
