@@ -11,215 +11,271 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">14</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">156</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">207</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">223</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">254</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">278</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5e227fb952ac538978783fbd8374fcc771a1d9f7" datatype="html">
-        <source>Location Info</source>
-        <target>Informații despre locație</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="83ab99aaffa137689a47edece3f6358c17f2f05a" datatype="html">
-        <source>Legal Name</source>
-        <target>Denumirea juridică</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2bbc60ccf273ac77452a9d950bee97d9c7f8f7e8" datatype="html">
-        <source>Trade Name</source>
-        <target>Denumirea comercială</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="541087322c34e8b26954fd67ff4fc80d1a6c1b33" datatype="html">
-        <source>Name is required.</source>
-        <target>Denumirea este necesară.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="a7ecbf2562dbf6da45e03e9dc613b66bfc85a437" datatype="html">
-        <source>Name must be no more than <x id="ICU" equiv-text="{inputMaxLength, plural, =1 {...} other {...}}"/>.</source>
-        <target>Denumirea nu trebuie să depășească <x id="ICU" equiv-text="{inputMaxLength, plural, =1 {...} few {...} other {...}}"/>.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="b33f7efe3cff6c9a11dcdb7946dca7946b1ecbf4" datatype="html">
-        <source>{VAR_PLURAL, plural, =1 {1 character} other {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> characters} }</source>
-        <target>{VAR_PLURAL, plural, =1 {1 simbol} few {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> simbole} other {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> de simbole} }</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="619f15c9ffd30e1720b4823369553ff75eba23ec" datatype="html">
-        <source>Discount StarNet</source>
-        <target>Reducere StarNet</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="a311db30eb17825ba7ffc2a1397927439c4d2339" datatype="html">
-        <source>Discount is required.</source>
-        <target>Reducere este necesară.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="f44c1439acf97310a2f5108862a5f6eaf1417939" datatype="html">
-        <source>Discount must be at least <x id="INTERPOLATION" equiv-text="{{discountMin}}"/>%.</source>
-        <target>Reducerile trebuie să fie de cel puțin <x id="INTERPOLATION" equiv-text="{{discountMin}}"/>%.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">34</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="306759a481896715c4b59f6e4dacdab9fe5fcbf5" datatype="html">
-        <source>Discount should not exceed <x id="INTERPOLATION" equiv-text="{{discountMax}}"/>%.</source>
-        <target>Reducerea nu trebuie să depășească <x id="INTERPOLATION" equiv-text="{{discountMax}}"/>%.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ae25bf0ed885df38b39073762df7e66e8ff9bac4" datatype="html">
-        <source>Activating the reservation</source>
-        <target>Activarea bronării</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">43</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="607de17c2a755f65775881c19e276e7c933bcf94" datatype="html">
-        <source>Category</source>
-        <target>Categorie</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">49</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4b14e06ecce376a4513b11c50864977ee5baba61" datatype="html">
-        <source>Category is required.</source>
-        <target>Categorie este necesară.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">54</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="eb3e5c5468327fe25c0d7800db94994dddeb5665" datatype="html">
-        <source>Select the average sum of the single order</source>
-        <target>Selectați suma medie a comenzii unice</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="0356333031889ef7efe8997c25648a2713c892e0" datatype="html">
-        <source>Sum is required.</source>
-        <target>Suma este necesară.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">65</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7a811d9a2bdf28f5d7028015b354004eac213e99" datatype="html">
-        <source>Description RO</source>
-        <target>Descriere RO</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">71</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="8b49c52315ea545a3b62d127fbe3515910bfa5cd" datatype="html">
-        <source>Description is required.</source>
-        <target>Descriere este necesară.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">86</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">82</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="327908cefb5adbaa4b09989367799287ee6e79df" datatype="html">
-        <source>Description must be no more than <x id="ICU" equiv-text="{textareaMaxLength, plural, =1 {...} other {...}}"/>.</source>
-        <target>Descriere nu trebuie să depășească <x id="ICU" equiv-text="{textareaMaxLength, plural, =1 {...} few {...} other {...}}"/>.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">75</context>
+          <context context-type="linenumber">116</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">139</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="fdec92cfa9f758f450c97e45c58f96ba1bbf82d8" datatype="html">
-        <source>{VAR_PLURAL, plural, =1 {1 character} other {<x id="INTERPOLATION" equiv-text="{{textareaMaxLength}}"/> characters} }</source>
-        <target>{VAR_PLURAL, plural, =1 {1 simbol} few {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> simbole} other {<x id="INTERPOLATION" equiv-text="{{textareaMaxLength}}"/> de simbole} }</target>
+      <trans-unit id="935236b51a88ebda13345770b63fc258e5c46c3b" datatype="html">
+        <source>Working Hours</source>
+        <target>Ore de lucru</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">75</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1b775926de529021e2ae797007cec9991abef8b9" datatype="html">
-        <source>Description RU</source>
-        <target>Descriere RU</target>
+      <trans-unit id="d5e0dbc9fd4651759df915cdc6ba26fe3f17475f" datatype="html">
+        <source>From</source>
+        <target>De la</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="249d1fb6b56d6c542ff815226b30737c2de93a97" datatype="html">
+        <source>Up to</source>
+        <target>Pâna la</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c9039b1b13b3ef165b66b3c5d79f810ab1ebb050" datatype="html">
+        <source>Open</source>
+        <target>Deschis</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4804b8e78964cee9e5c85f31fd982639b97780b2" datatype="html">
+        <source>Closed</source>
+        <target>Închis</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cda31dbd724cf5f4fa7a4274d9120651490c8a8c" datatype="html">
+        <source>Back</source>
+        <target>Înapoi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
         <source>Cancel</source>
         <target>Anulare</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
         <source>Next</source>
         <target>Următor</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/app.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="sourcefile">app/working-hours/working-hours.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5e227fb952ac538978783fbd8374fcc771a1d9f7" datatype="html">
+        <source>Location Info</source>
+        <target>Informații despre locație</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="83ab99aaffa137689a47edece3f6358c17f2f05a" datatype="html">
+        <source>Legal Name</source>
+        <target>Denumirea juridică</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2bbc60ccf273ac77452a9d950bee97d9c7f8f7e8" datatype="html">
+        <source>Trade Name</source>
+        <target>Denumirea comercială</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="541087322c34e8b26954fd67ff4fc80d1a6c1b33" datatype="html">
+        <source>Name is required.</source>
+        <target>Denumirea este necesară.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a7ecbf2562dbf6da45e03e9dc613b66bfc85a437" datatype="html">
+        <source>Name must be no more than <x id="ICU" equiv-text="{inputMaxLength, plural, =1 {...} other {...}}"/>.</source>
+        <target>Denumirea nu trebuie să depășească <x id="ICU" equiv-text="{inputMaxLength, plural, =1 {...} few {...} other {...}}"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b33f7efe3cff6c9a11dcdb7946dca7946b1ecbf4" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {1 character} other {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> characters} }</source>
+        <target>{VAR_PLURAL, plural, =1 {1 simbol} few {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> simbole} other {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> de simbole} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="619f15c9ffd30e1720b4823369553ff75eba23ec" datatype="html">
+        <source>Discount StarNet</source>
+        <target>Reducere StarNet</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a311db30eb17825ba7ffc2a1397927439c4d2339" datatype="html">
+        <source>Discount is required.</source>
+        <target>Reducere este necesară.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f44c1439acf97310a2f5108862a5f6eaf1417939" datatype="html">
+        <source>Discount must be at least <x id="INTERPOLATION" equiv-text="{{discountMin}}"/>%.</source>
+        <target>Reducerile trebuie să fie de cel puțin <x id="INTERPOLATION" equiv-text="{{discountMin}}"/>%.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="306759a481896715c4b59f6e4dacdab9fe5fcbf5" datatype="html">
+        <source>Discount should not exceed <x id="INTERPOLATION" equiv-text="{{discountMax}}"/>%.</source>
+        <target>Reducerea nu trebuie să depășească <x id="INTERPOLATION" equiv-text="{{discountMax}}"/>%.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ae25bf0ed885df38b39073762df7e66e8ff9bac4" datatype="html">
+        <source>Activating the reservation</source>
+        <target>Activarea bronării</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="607de17c2a755f65775881c19e276e7c933bcf94" datatype="html">
+        <source>Category</source>
+        <target>Categorie</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b14e06ecce376a4513b11c50864977ee5baba61" datatype="html">
+        <source>Category is required.</source>
+        <target>Categorie este necesară.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eb3e5c5468327fe25c0d7800db94994dddeb5665" datatype="html">
+        <source>Select the average sum of the single order</source>
+        <target>Selectați suma medie a comenzii unice</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0356333031889ef7efe8997c25648a2713c892e0" datatype="html">
+        <source>Sum is required.</source>
+        <target>Suma este necesară.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7a811d9a2bdf28f5d7028015b354004eac213e99" datatype="html">
+        <source>Description RO</source>
+        <target>Descriere RO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8b49c52315ea545a3b62d127fbe3515910bfa5cd" datatype="html">
+        <source>Description is required.</source>
+        <target>Descriere este necesară.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="327908cefb5adbaa4b09989367799287ee6e79df" datatype="html">
+        <source>Description must be no more than <x id="ICU" equiv-text="{textareaMaxLength, plural, =1 {...} other {...}}"/>.</source>
+        <target>Descriere nu trebuie să depășească <x id="ICU" equiv-text="{textareaMaxLength, plural, =1 {...} few {...} other {...}}"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdec92cfa9f758f450c97e45c58f96ba1bbf82d8" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {1 character} other {<x id="INTERPOLATION" equiv-text="{{textareaMaxLength}}"/> characters} }</source>
+        <target>{VAR_PLURAL, plural, =1 {1 simbol} few {<x id="INTERPOLATION" equiv-text="{{inputMaxLength}}"/> simbole} other {<x id="INTERPOLATION" equiv-text="{{textareaMaxLength}}"/> de simbole} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1b775926de529021e2ae797007cec9991abef8b9" datatype="html">
+        <source>Description RU</source>
+        <target>Descriere RU</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/location-info/location-info.component.ts</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="319e0745bcbc132451569294fa2fa21bf10f555a" datatype="html">

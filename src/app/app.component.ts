@@ -49,8 +49,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.changeStep(0);
       this.loadDataStep(0);
+      /*setTimeout(() => {
+        this.changeStep(0);
+      }, 0);*/
     }, 0);
   }
 

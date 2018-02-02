@@ -1,0 +1,34 @@
+@import '~sass/variables';
+
+@import
+'~bootstrap/scss/functions',
+'~bootstrap/scss/variables';
+
+input[type=text] {
+  text-align: center;
+}
+.mat-button-toggle-group {
+  box-shadow: none;
+  border: 1px solid $input-border-color;
+  border-radius: 5px;
+  > .mat-button-toggle {
+    flex: 1;
+    text-align: center;
+    color: $body-color;
+    &.mat-button-toggle-checked {
+      color: white;
+      &:nth-child(1) {
+        background-color: $success;
+      }
+      &:nth-child(2) {
+        background-color: $danger;
+      }
+      &:nth-child(3) {
+        background-color: $primary;
+      }
+    }
+    ::ng-deep label {
+      margin-bottom: 0;
+    }
+  }
+}

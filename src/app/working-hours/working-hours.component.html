@@ -1,35 +1,33 @@
 <h3 i18n>Working Hours</h3>
 <ng-container [formGroup]="stepDataService.workingHoursFormGroup">
-  <div class="form-row">
+  <div class="form-row mb-2">
     <div class="col-md-2 offset-2" i18n>From</div>
     <div class="col-md-2" i18n>Up to</div>
   </div>
   <ng-container formArrayName="formArray">
-    <div *ngFor="let workingHour of formArray.controls; let i = index" [formGroupName]="i" class="form-row">
-      <div class="col-md-2">{{weekDays[i]}}:</div>
+    <div *ngFor="let workingHour of formArray.controls; let i = index" [formGroupName]="i" class="form-row mb-5">
+      <div class="col-md-2 align-self-center text-capitalize font-weight-bold">{{weekDays[i]}}:</div>
       <div class="col-md-4 row">
-        <div class="col-md-5">
-          <input type="time" class="form-control" formControlName="fromTime" required>
+        <div class="col-md-5 pr-0">
+          <input type="text" class="form-control" [textMask]="{ mask: timeMask, showMask: true }" formControlName="fromTime">
         </div>
-        <div class="col-md-2 align-self-center">
-          &mdash;
-        </div>
-        <div class="col-md-5">
-          <input type="time" class="form-control" formControlName="fromTime" required>
+        <div class="col-md-2 align-self-center pr-0 pl-0 text-center">&mdash;</div>
+        <div class="col-md-5 pl-0">
+          <input type="text" class="form-control" [textMask]="{ mask: timeMask, showMask: true }" formControlName="toTime">
         </div>
       </div>
       <div class="col-md-6">
-        <mat-button-toggle-group #group="matButtonToggleGroup" formControlName="state">
+        <mat-button-toggle-group class="btn-block" formControlName="state">
           <mat-button-toggle value="open" i18n>Open</mat-button-toggle>
           <mat-button-toggle value="closed" i18n>Closed</mat-button-toggle>
-          <mat-button-toggle value="24" i18n>24/24</mat-button-toggle>
+          <mat-button-toggle value="24">24/24</mat-button-toggle>
         </mat-button-toggle-group>
       </div>
     </div>
   </ng-container>
   <div class="form-row">
     <div class="col-md-3 offset-3">
-      <button type="button" class="btn btn-success btn-block" matStepperPrevious i18n>Back</button>
+      <button type="button" class="btn btn-secondary btn-block" matStepperPrevious i18n>Back</button>
     </div>
     <div class="col-md-3">
       <button type="reset" class="btn btn-info btn-block" (click)="revert()" [disabled]="stepDataService.workingHoursFormGroup.pristine" i18n>Cancel</button>

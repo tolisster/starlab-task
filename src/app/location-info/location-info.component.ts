@@ -40,10 +40,10 @@ export class LocationInfoComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.stepDataService.locationInfoFormGroup.reset({
       tradeName: '',
-      discount: '',
-      reservation: '',
-      category: '',
-      orderSum: 2,
+      discount: null,
+      reservation: false,
+      category: null,
+      orderSum: null,
       roDescription: '',
       ruDescription: ''
     });

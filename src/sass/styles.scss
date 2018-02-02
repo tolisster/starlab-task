@@ -25,8 +25,7 @@ html {
     @include gradient-directional(#d7d7d7, #fff);
   }
 }
-label {
-  color: #5d7081;
+.form-group label {
   margin-bottom: 0.2rem;
 }
 .form-control {

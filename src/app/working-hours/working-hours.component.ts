@@ -1,6 +1,7 @@
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnChanges, OnInit } from '@angular/core';
 import { FormArray } from '@angular/forms';
 
+import { localStoragePrefix } from '../config';
 import { StepDataService } from '../step-data.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { StepDataService } from '../step-data.service';
   templateUrl: './working-hours.component.html',
   styleUrls: ['./working-hours.component.scss']
 })
-export class WorkingHoursComponent implements OnInit {
+export class WorkingHoursComponent implements OnInit, OnChanges {
   weekDays: string[];
+  timeMask = [/[0-2]/, /[0-9]/, ':', /[0-5]/, /[0-9]/];
 
   get formArray(): FormArray { return this.stepDataService.workingHoursFormGroup.get('formArray') as FormArray; }
 
@@ -28,6 +30,19 @@ export class WorkingHoursComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.stepDataService.workingHoursFormGroup.reset({
+    });
+  }
+
+  revert() {
+    this.ngOnChanges();
+  }
+
+  save() {
+    localStorage.setItem(`${localStoragePrefix}-step-1`, JSON.stringify(this.stepDataService.workingHoursFormGroup.value));
   }
 
 }
