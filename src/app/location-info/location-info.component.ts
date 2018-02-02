@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 
-import { discountMax, discountMin, inputMaxLength, localStoragePrefix, textareaMaxLength } from '../config';
+import { discountMax, discountMin, inputMaxLength, textareaMaxLength } from '../config';
 import { CategoryLocation } from '../category-location';
 import { CategoryLocationService } from '../category-location.service';
 import { StepDataService } from '../step-data.service';
@@ -58,7 +58,7 @@ export class LocationInfoComponent implements OnInit, OnChanges {
   }
 
   save() {
-    localStorage.setItem(`${localStoragePrefix}-step-0`, JSON.stringify(this.stepDataService.locationInfoFormGroup.value));
+    this.stepDataService.save(0);
   }
 
 }

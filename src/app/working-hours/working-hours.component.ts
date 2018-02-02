@@ -1,7 +1,6 @@
 import { Component, Inject, LOCALE_ID, OnChanges, OnInit } from '@angular/core';
 import { FormArray } from '@angular/forms';
 
-import { localStoragePrefix } from '../config';
 import { StepDataService } from '../step-data.service';
 
 @Component({
@@ -42,7 +41,7 @@ export class WorkingHoursComponent implements OnInit, OnChanges {
   }
 
   save() {
-    localStorage.setItem(`${localStoragePrefix}-step-1`, JSON.stringify(this.stepDataService.workingHoursFormGroup.value));
+    this.stepDataService.save(1);
   }
 
 }

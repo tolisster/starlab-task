@@ -1,0 +1,48 @@
+<h3 i18n>Contact Data</h3>
+<ng-container [formGroup]="stepDataService.contactDataFormGroup">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="firstNameInputText" i18n>Contact First Name</label>
+        <input type="text" class="form-control" id="firstNameInputText" formControlName="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastNameInputText" i18n>Contact Last Name</label>
+        <input type="text" class="form-control" id="lastNameInputText" formControlName="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneInputTel" i18n>Phone Number</label>
+        <input type="tel" class="form-control" id="phoneInputTel" [textMask]="{ mask: phoneMask, showMask: true }" formControlName="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="countryInputText" i18n>Country</label>
+        <input type="text" class="form-control" id="countryInputText" formControlName="country" required>
+      </div>
+      <div class="form-group">
+        <label for="cityInputText" i18n>City</label>
+        <input type="text" class="form-control" id="cityInputText" formControlName="city" required>
+      </div>
+      <div class="form-group">
+        <label for="streetInputText" i18n>Street</label>
+        <input type="text" class="form-control" id="streetInputText" formControlName="street" required>
+      </div>
+      <div class="form-group">
+        <label for="postCodeInputText" i18n>Post Code</label>
+        <input type="text" class="form-control" id="postCodeInputText" formControlName="postCode" required>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-6">
+      <button type="reset" class="btn btn-info btn-block" (click)="revert()" [disabled]="stepDataService.contactDataFormGroup.pristine" i18n>Cancel</button>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-success btn-block" (click)="save()" [disabled]="stepDataService.contactDataFormGroup.invalid" matStepperNext i18n>Next</button>
+    </div>
+  </div>
+</ng-container>

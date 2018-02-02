@@ -1,9 +1,8 @@
 import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 import { MatStepper } from '@angular/material';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 
-import { localStoragePrefix } from './config';
 import { StepDataService } from './step-data.service';
 
 @Component({
@@ -12,44 +11,19 @@ import { StepDataService } from './step-data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  formGroup: FormGroup;
-
-  phoneMask = ['+', '3', '7', '3', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/];
-
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-
   @ViewChild('stepper') stepper: MatStepper;
 
   /** Returns a FormArray with the name 'formArray'. */
-  get formArray(): AbstractControl | null { return this.formGroup.get('formArray'); }
+  get formArray(): AbstractControl | null { return this.stepDataService.formGroup.get('formArray'); }
 
-  constructor(private formBuilder: FormBuilder, private stepDataService: StepDataService) { }
+  constructor(public stepDataService: StepDataService) { }
 
   ngOnInit() {
-    this.formGroup = this.formBuilder.group({
-      formArray: this.formBuilder.array([
-        this.stepDataService.locationInfoFormGroup,
-        this.stepDataService.workingHoursFormGroup,
-        this.formBuilder.group({
-          //emailFormCtrl: ['', Validators.email]
-        }),
-        this.formBuilder.group({
-          //emailFormCtrl: ['', Validators.email]
-        }),
-        this.formBuilder.group({
-          //emailFormCtrl: ['', Validators.email]
-        }),
-        this.formBuilder.group({
-          //emailFormCtrl: ['', Validators.email]
-        }),
-      ])
-    });
   }
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.loadDataStep(0);
+      this.stepDataService.load(0);
       /*setTimeout(() => {
         this.changeStep(0);
       }, 0);*/
@@ -65,13 +39,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   stepperChanged(evt: StepperSelectionEvent) {
-    this.loadDataStep(evt.selectedIndex);
-  }
-
-  loadDataStep(index: number) {
-    const data = localStorage.getItem(`${localStoragePrefix}-step-${index}`);
-    if (data) {
-      this.formArray.get([index]).setValue(JSON.parse(data));
-    }
+    this.stepDataService.load(evt.selectedIndex);
   }
 }

@@ -18,6 +18,7 @@ import { AppMaterialModule } from './material.module';
 import { TagsInputComponent } from './tags-input/tags-input.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StepDataService } from './step-data.service';
+import { ContactDataComponent } from './contact-data/contact-data.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { StepDataService } from './step-data.service';
     WorkingHoursComponent,
     LocationInfoComponent,
     TagsInputComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactDataComponent
   ],
   imports: [
     BrowserModule,
